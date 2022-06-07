@@ -18,7 +18,8 @@ let countdown;
 - fade from inner mouth to black 
 */
 
-var capture;
+//var capture;
+let vid;
 
 function setup() 
 {
@@ -26,9 +27,16 @@ function setup()
   frameRate(30);
   
   //input video file for capture to apply filter to video 
-  capture = createCapture(VIDEO);
-  capture.size(1920/2, 1080/2);
+  //capture = createCapture(VIDEO);
+  //capture.size(1920/2, 1080/2);
+  vid = createVideo('assets/Happy_Fear',vidLoad);
   noStroke();
+}
+
+function vidLoad()
+{
+  vid.loop();
+  vid.volume(0);
 }
 
 function draw() 
