@@ -30,6 +30,8 @@ function setup()
   //capture = createCapture(VIDEO);
   //capture.size(1920/2, 1080/2);
   vid = createVideo('assets/Happy_Fear',vidLoad);
+
+  vid.size(1920/2, 1080/2);
   noStroke();
 }
 
@@ -55,19 +57,19 @@ function draw()
       seconds = 15;
       totalSeconds = totalSeconds + 9; 
     }
-  capture.loadPixels();
+  vid.loadPixels();
   
   if(mode == 1)
     {
       background(0);
       stepSize = 10 
       
-      for (var x = 0; x < capture.width; x += stepSize) {
-        for (var y = 0; y < capture.height; y += stepSize) {
-          var index = ((y*capture.width) + x) * 4;
-          var redVal = capture.pixels[index];
-          var greenVal = capture.pixels[index + 1];
-          var blueVal = capture.pixels[index + 2];
+      for (var x = 0; x < vid.width; x += stepSize) {
+        for (var y = 0; y < vid.height; y += stepSize) {
+          var index = ((y*vid.width) + x) * 4;
+          var redVal = vid.pixels[index];
+          var greenVal = vid.pixels[index + 1];
+          var blueVal = vid.pixels[index + 2];
           fill(redVal, greenVal, blueVal, 75);
           ellipse(x, y, stepSize + 10, stepSize+ 10);
         }
@@ -75,12 +77,12 @@ function draw()
     }
   if(mode == 0){
   stepSize = 20;
-  for (var x = 0; x < capture.width; x += stepSize) {
-    for (var y = 0; y < capture.height; y += stepSize) {
-      var index = ((y*capture.width) + x) * 4;
-      var redVal = capture.pixels[index];
-      var greenVal = capture.pixels[index + 1];
-      var blueVal = capture.pixels[index + 2];
+  for (var x = 0; x < vid.width; x += stepSize) {
+    for (var y = 0; y < vid.height; y += stepSize) {
+      var index = ((y*vid.width) + x) * 4;
+      var redVal = vid.pixels[index];
+      var greenVal = vid.pixels[index + 1];
+      var blueVal = vid.pixels[index + 2];
       let xPos = x;
       let yPos = y;
       push();
