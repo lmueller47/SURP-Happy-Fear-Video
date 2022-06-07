@@ -29,7 +29,7 @@ function setup()
   //input video file for capture to apply filter to video 
   //capture = createCapture(VIDEO);
   //capture.size(1920/2, 1080/2);
-  vid = createVideo('assets/Happy_Fear',vidLoad);
+  vid = createVideo('Project Normal Setting_1.mp4', vidLoad);
 
   vid.size(1920/2, 1080/2);
   noStroke();
